@@ -28,8 +28,9 @@ def test_type_validation():
     
     with pytest.raises(TypeError, match="Expected str, got NoneType"):
         spin_words(None)	
-        												
-    with pytest.raises(ValueError, match="Input cannot be None"):
+
+	# Test empty string									
+    with pytest.raises(ValueError, match="Input cannot be empty"):
      	spin_words("")
         
 

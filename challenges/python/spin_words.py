@@ -11,11 +11,13 @@
 # "This is another test" --> "This is rehtona test"
 
 def spin_words(string):
+	# validates type
 	if not isinstance(string, str):
 		raise TypeError(f"Expected str, got {type(string).__name__}")
 	
+	# validates truthiness
 	if not string:
-		raise ValueError("Input cannot be None")
+		raise ValueError("Input cannot be empty")
 	
 	words = string.split()
 	processed_words = []
