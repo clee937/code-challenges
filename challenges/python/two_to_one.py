@@ -13,10 +13,17 @@
 # a = "abcdefghijklmnopqrstuvwxyz"
 # longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-def longest(a1, a2):
-    pass
+# String concatenation creates an entirely new string in memory. For very long strings, will require extra memory.
+def longest(s1, s2):
+    return ''.join(sorted(set(s1 + s2)))
+
+
+# Union operator combines 2 sets (just references, not string data). Set operations are optimised.
+def longest(s1, s2):
+    return ''.join(sorted(set(s1) | set(s2)))
 
 
 print(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"))  # --> "abcdefklmopqwxy"
 print(longest("abcdefghijklmnopqrstuvwxyz", "abcdefghijklmnopqrstuvwxyz"))
 # --> "abcdefghijklmnopqrstuvwxyz"
+print(longest("aretheyhere", "yestheyarehere"))  # --> "aehrsty"
