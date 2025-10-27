@@ -14,15 +14,16 @@
 # ===========================================
 
 def reversed_list(lst1, lst2):
-  for index in range(len(lst1)):
-    if lst2[len(lst2) - 1 - index] != lst1[index]:
-      return False
-  return True
+    for index in range(len(lst1)):
+        if lst2[len(lst2) - 1 - index] != lst1[index]:
+            return False
+    return True
 
 # Using reversed():
 
 # def reversed_list(lst1, lst2):
 #   return lst1 == list(reversed(lst2))
-    
-print(reversed_list([1, 2, 3], [3, 2, 1])) # True
-print(reversed_list([1, 5, 3], [3, 2, 1])) # False
+
+
+print(reversed_list([1, 2, 3], [3, 2, 1]))  # True
+print(reversed_list([1, 5, 3], [3, 2, 1]))  # False
