@@ -15,8 +15,22 @@
 # two_sum([1, 2, 3], 4) # returns (0, 2) or (2, 0)
 # two_sum([3, 2, 4], 6) # returns (1, 2) or (2, 1)
 
+
 def two_sum(numbers, target):
-    pass
+    for i, num1 in enumerate(numbers):
+        for j, num2 in enumerate(numbers[i+1:], i+1):
+            if num1 + num2 == target:
+                return (i, j)
+
+
+# Hash map. More efficient. Fewer iterations - only passes through list/array once
+def two_sum(numbers, target):
+    checked = {}
+    for i, num in enumerate(numbers):
+        result = target - num
+        if result in checked:
+            return (checked[result], i)
+        checked[num] = i
 
 
 print(two_sum([1, 2, 3], 4))  # --> returns (0, 2) or (2, 0)
