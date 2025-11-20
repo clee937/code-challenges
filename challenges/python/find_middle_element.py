@@ -29,5 +29,9 @@ def gimme(input_array):
     return input_array.index(mid)
 
 
+def gimme(arr):
+    return 3 - arr.index(max(arr)) - arr.index(min(arr))
+
+
 print(gimme([2, 3, 1]))  # --> 0
 print(gimme([5, 10, 14]))  # --> 1
