@@ -31,5 +31,23 @@
 # a or b might be nil or null or None or nothing (except in C++, COBOL, Crystal, D, Dart, Elixir, Fortran, F#, Haskell, Nim, OCaml, Pascal, Perl, PowerShell, Prolog, PureScript, R, Racket, Rust, Shell, Swift).
 # If a or b are nil (or null or None, depending on the language), the problem doesn't make sense so return false.
 
+
 def comp(array1, array2):
-    pass
+    try:
+        return sorted([i**2 for i in array1]) == sorted(array2)
+    except:
+        return False
+
+
+a = [121, 144, 19, 161, 19, 144, 19, 11]
+b = [121, 14641, 20736, 361, 25921, 361, 20736, 361]
+
+c = [121, 144, 19, 161, 19, 144, 19, 11]
+d = [132, 14641, 20736, 361, 25921, 361, 20736, 361]
+
+e = [121, 144, 19, 161, 19, 144, 19, 11]
+f = [121, 14641, 20736, 36100, 25921, 361, 20736, 361]
+
+print(comp(a, b))  # --> True
+print(comp(c, d))  # --> False
+print(comp(e, f))  # --> False
