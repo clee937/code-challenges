@@ -1,0 +1,48 @@
+# CodeWars Challenge: [How much I love you]
+# Link: [https://www.codewars.com/kata/57f24e6a18e9fad8eb000296/train/python]
+# Difficulty: [8 Kyu]
+
+# Instructions
+# Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+# "I love you"
+# "a little"
+# "a lot"
+# "passionately"
+# "madly"
+# "not at all"
+
+# If there are more than 6 petals, you start over with "I love you" for 7 petals, "a little" for 8 petals and so on. Your goal in this kata is to determine which phrase the girls would say at the last petal for a flower of a given number of petals. The number of petals is always greater than 0.
+
+# list
+def how_much_i_love_you(nb_petals):
+    num_of_petals = ["I love you", "a little",
+                     "a lot", "passionately", "madly", "not at all"]
+
+    return num_of_petals[(nb_petals-1) % len(num_of_petals)]
+
+
+# dictionary
+def how_much_i_love_you(nb_petals):
+
+    num_of_petals = {1: "I love you",
+                     2: "a little",
+                     3: "a lot",
+                     4: "passionately",
+                     5: "madly",
+                     0: "not at all"}
+
+    return num_of_petals[nb_petals % 6]
+
+
+def how_much_i_love_you(nb_petals):
+
+    return ["I love you", "a little",
+            "a lot", "passionately", "madly", "not at all"][(nb_petals-1) % 6]
+
+
+print(how_much_i_love_you(7))  # --> "I love you"
+print(how_much_i_love_you(3))  # --> "a lot"
+print(how_much_i_love_you(6))  # --> "not at all"
+print(how_much_i_love_you(282))  # --> "not at all"
+print(how_much_i_love_you(123))  # --> "a lot"
