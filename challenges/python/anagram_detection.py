@@ -12,7 +12,7 @@
 # "Buckethead" is an anagram of "DeathCubeK"
 
 def is_anagram(test, original):
-    pass
+    return sorted(list(test.lower())) == sorted(list(original.lower()))
 
 
 print(is_anagram("foefet", "toffee"))  # --> True
